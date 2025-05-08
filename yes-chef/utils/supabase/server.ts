@@ -1,12 +1,12 @@
 import { createServerClient } from "@supabase/ssr";
 import { cookies } from "next/headers";
 
-export const createClient = async () => {
+export const createSupabaseClient = async () => {
   const cookieStore = await cookies();
 
   return createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    process.env.SUPABASE_URL!,
+    process.env.SUPABASE_ANON_KEY!,
     {
       cookies: {
         getAll() {
@@ -24,6 +24,23 @@ export const createClient = async () => {
           }
         },
       },
-    },
+    }
   );
 };
+
+export async function getAuth() {
+  const { auth } = await createSupabaseClient();
+  return auth;
+}
+
+export async function getUser() {
+  const { auth } = await createSupabaseClient();
+  const user = (await auth.getUser()).data.user;
+
+  return user;
+}
+
+export async function protectRoute() {
+  const user = await getUser();
+  if (!user) throw Error("Unauthorized");
+}

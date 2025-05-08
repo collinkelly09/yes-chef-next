@@ -3,10 +3,26 @@ import { EnvVarWarning } from "@/components/env-var-warning";
 import HeaderAuth from "@/components/header-auth";
 import { ThemeSwitcher } from "@/components/theme-switcher";
 import { hasEnvVars } from "@/utils/supabase/check-env-vars";
-import { Geist } from "next/font/google";
 import { ThemeProvider } from "next-themes";
+import { Geist } from "next/font/google";
 import Link from "next/link";
+import { Toaster } from "react-hot-toast";
 import "./globals.css";
+import { Italianno, Jacques_Francois } from "next/font/google";
+
+export const italianno = Italianno({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-italianno",
+});
+
+const jacquesFrancois = Jacques_Francois({
+  weight: "400",
+  display: "swap",
+  variable: "--font-jacques",
+  subsets: ["latin"],
+});
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -14,46 +30,43 @@ const defaultUrl = process.env.VERCEL_URL
 
 export const metadata = {
   metadataBase: new URL(defaultUrl),
-  title: "Next.js and Supabase Starter Kit",
-  description: "The fastest way to build apps with Next.js and Supabase",
+  title: "yesChef",
+  description: "A sleek way to store and organize your favorite recipes!",
 };
 
-const geistSans = Geist({
-  display: "swap",
-  subsets: ["latin"],
-});
-
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={geistSans.className} suppressHydrationWarning>
-      <body className="bg-background text-foreground">
+    <html
+      lang="en"
+      className={jacquesFrancois.className}
+      suppressHydrationWarning
+    >
+      <body className="bg-background text-foreground" suppressHydrationWarning>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          <main className="min-h-screen flex flex-col items-center">
-            <div className="flex-1 w-full flex flex-col gap-20 items-center">
-              <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16">
-                <div className="w-full max-w-5xl flex justify-between items-center p-3 px-5 text-sm">
-                  <div className="flex gap-5 items-center font-semibold">
-                    <Link href={"/"}>Next.js Supabase Starter</Link>
-                    <div className="flex items-center gap-2">
-                      <DeployButton />
-                    </div>
+          <main className="min-h-screen flex flex-col items-center pt-10">
+            <div>
+              {children}
+              {/* <div className="flex-1 w-screen  max-w-screen-2xl px-16 py-4">
+                <div className="flex justify-between">
+                  <div className={`${italianno.className} text-8xl px-6 `}>
+                    yesChef
                   </div>
-                  {!hasEnvVars ? <EnvVarWarning /> : <HeaderAuth />}
+                  <div className="pt-4">
+                    {!hasEnvVars ? <EnvVarWarning /> : <HeaderAuth />}
+                  </div>
                 </div>
-              </nav>
-              <div className="flex flex-col gap-20 max-w-5xl p-5">
-                {children}
-              </div>
-
+              </div> */}
+            </div>
+            {/* <div>
               <footer className="w-full flex items-center justify-center border-t mx-auto text-center text-xs gap-8 py-16">
                 <p>
                   Powered by{" "}
@@ -68,9 +81,10 @@ export default function RootLayout({
                 </p>
                 <ThemeSwitcher />
               </footer>
-            </div>
+            </div> */}
           </main>
         </ThemeProvider>
+        <Toaster />
       </body>
     </html>
   );
