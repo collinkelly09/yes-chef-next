@@ -23,4 +23,16 @@ jobs:
           npm run lint
         env:
           CI: true
+  securityCheck:
+    name: Security Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check for Security
+        run: |
+          echo "Running Security Check..."
+          sleeps 5s;
+          echo "Running Security Check..."
+          sleeps 5s;
+          echo "Running Security Check..."
+          sleeps 5s;
           
