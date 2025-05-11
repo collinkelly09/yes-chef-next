@@ -3,7 +3,7 @@ name: SimplePipeline
 on: 
   push:
     #todo Add dev branch to this
-    branches: [main]
+    branches: [main, dev-branch]
 
 jobs:
   lintTest:
