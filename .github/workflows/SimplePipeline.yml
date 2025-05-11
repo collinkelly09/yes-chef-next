@@ -30,9 +30,9 @@ jobs:
       - name: Check for Security
         run: |
           echo "Running Security Check..."
-          sleeps 5s;
+          sleeps 5;
           echo "Running Security Check..."
-          sleeps 5s;
+          sleeps 5;
           echo "Running Security Check..."
-          sleeps 5s;
+          sleeps 5;
           
