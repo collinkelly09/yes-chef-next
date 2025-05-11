@@ -29,10 +29,10 @@ jobs:
     steps:
       - name: Check for Security
         run: |
-          echo "Running Security Check..."
-          sleeps 5;
-          echo "Running Security Check..."
-          sleeps 5;
-          echo "Running Security Check..."
-          sleeps 5;
+          echo "Running Security Check... 0"
+          sleep 5s;
+          echo "Running Security Check... 1"
+          sleep 5s;
+          echo "Running Security Check... 2"
+          sleep 5s;
           
