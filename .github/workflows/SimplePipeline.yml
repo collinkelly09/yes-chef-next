@@ -2,7 +2,6 @@ name: SimplePipeline
 
 on: 
   push:
-    #todo Add dev branch to this
     branches: [main, dev-branch]
 
 jobs:
@@ -14,7 +13,6 @@ jobs:
         node-version: [20]
     steps:
       - name : Clone Repository
-      #todo Add dev branch to this
         uses: actions/checkout@v2
       - name: Install pnpm
         uses: pnpm/action-setup@v4
@@ -44,7 +42,6 @@ jobs:
   #       node-version: [20]
   #   steps:
   #     - name: Clone Repository
-  #     #todo Add dev branch to this
   #       uses: actions/checkout@v2
   #     - name: Install pnpm
   #       uses: pnpm/action-setup@v4
