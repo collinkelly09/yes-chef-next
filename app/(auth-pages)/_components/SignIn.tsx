@@ -8,7 +8,7 @@ import { Label } from "@/components/ui/label";
 import { Provider } from "@supabase/auth-js";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useState, useTransition } from "react";
+import { useTransition } from "react";
 import toast from "react-hot-toast";
 import { AuthAction } from "./AuthPage";
 
@@ -39,7 +39,7 @@ export default function Signin({ setAuthAction }: Props) {
         <button
           className="text-foreground font-medium underline"
           onClick={() => {
-            setAuthAction("sigh-up");
+            setAuthAction("sign-up");
           }}
         >
           Sign up

@@ -1,5 +1,4 @@
 import Hero from "@/components/hero";
-import Signin from "./(auth-pages)/_components/SignIn";
 import { getUser } from "@/utils/supabase/client";
 import AuthPage from "./(auth-pages)/_components/AuthPage";
 
