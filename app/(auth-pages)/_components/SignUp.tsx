@@ -37,7 +37,7 @@ export default function Signup({ setAuthAction }: Props) {
         <button
           className="text-foreground font-medium underline"
           onClick={() => {
-            setAuthAction("sigh-up");
+            setAuthAction("sign-in");
           }}
         >
           Sign up

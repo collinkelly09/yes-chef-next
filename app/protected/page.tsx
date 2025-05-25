@@ -8,7 +8,7 @@ export default async function ProtectedPage() {
   const user = await getUser();
 
   if (!user) {
-    return redirect("/sign-in");
+    return redirect("/");
   }
 
   return (

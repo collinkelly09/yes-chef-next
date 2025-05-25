@@ -8,7 +8,7 @@ import { Label } from "@/components/ui/label";
 import { Provider } from "@supabase/auth-js";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useState, useTransition } from "react";
+import { useTransition } from "react";
 import toast from "react-hot-toast";
 import { AuthAction } from "./AuthPage";
 
@@ -35,11 +35,11 @@ export default function Signin({ setAuthAction }: Props) {
     <form className="flex-1 flex flex-col min-w-64">
       <h1 className="text-2xl font-medium">Sign in</h1>
       <p className="text-sm text-foreground">
-        Don&apos;t have an account?{" "}
+        Don't have an account?{" "}
         <button
           className="text-foreground font-medium underline"
           onClick={() => {
-            setAuthAction("sigh-up");
+            setAuthAction("sign-up");
           }}
         >
           Sign up
