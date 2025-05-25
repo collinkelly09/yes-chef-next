@@ -13,13 +13,13 @@ export default function AuthPage({ user }: { user: User | null }) {
   return (
     <>
       {!user && (
-        <>
+        <div className="flex-1 flex justify-center pt-16 pb-8 md:pt-0 md:items-center md:mb-52">
           {authAction === "sign-in" ? (
             <Signin setAuthAction={setAuthAction} />
           ) : (
             <Signup setAuthAction={setAuthAction} />
           )}
-        </>
+        </div>
       )}
     </>
   );
