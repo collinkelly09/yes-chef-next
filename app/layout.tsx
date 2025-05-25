@@ -1,4 +1,4 @@
-import DeployButton from "@/components/deploy-button";
+import DeployButton from "@/components/DeployButton";
 import { EnvVarWarning } from "@/components/env-var-warning";
 import { hasEnvVars } from "@/utils/supabase/check-env-vars";
 import { ThemeProvider } from "next-themes";

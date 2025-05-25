@@ -43,4 +43,5 @@ export async function getUser() {
 export async function protectRoute() {
   const user = await getUser();
   if (!user) throw Error("Unauthorized");
+  return user;
 }
