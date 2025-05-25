@@ -34,31 +34,31 @@ jobs:
           pnpm run lint
         env:
           CI: true
-  # runJest:
-  #   name: Run Jest Tests
-  #   runs-on: ubuntu-latest
-  #   strategy:
-  #     matrix:
-  #       node-version: [20]
-  #   steps:
-  #     - name: Clone Repository
-  #       uses: actions/checkout@v2
-  #     - name: Install pnpm
-  #       uses: pnpm/action-setup@v4
-  #       with:
-  #         version: 10
-  #     - name: Use Node.js ${{ matrix.node-version }}
-  #       uses: actions/setup-node@v4
-  #       with:
-  #         node-version: ${{ matrix.node-version }}
-  #         cache: 'pnpm'
-  #     - name: Install Dependencies
-  #       run: |
-  #         echo "Running Installing Dependencies..."
-  #         pnpm install
-  #     - name: Run Jest
-  #       run: |
-  #         echo "Running Jest Tests"
-  #         pnpm run test
-  #       env:
-  #         CI: true
+  runJest:
+    name: Run Jest Tests
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20]
+    steps:
+      - name: Clone Repository
+        uses: actions/checkout@v2
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
+      - name: Install Dependencies
+        run: |
+          echo "Running Installing Dependencies..."
+          pnpm install
+      - name: Run Jest
+        run: |
+          echo "Running Jest Tests"
+          pnpm run test
+        env:
+          CI: true
