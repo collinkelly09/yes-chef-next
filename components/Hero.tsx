@@ -4,7 +4,7 @@ export default function Header() {
   return (
     <div className="flex flex-col items-center">
       <div
-        className={`${italianno.className} text-7xl flex justify-center items-center `}
+        className={`${italianno.className} text-7xl flex justify-center items-center pb-5`}
       >
         yesChef
       </div>

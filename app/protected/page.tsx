@@ -1,11 +1,10 @@
 import FetchDataSteps from "@/components/tutorial/fetch-data-steps";
-import { createSupabaseClient } from "@/utils/supabase/server";
 import { InfoIcon } from "lucide-react";
 import { redirect } from "next/navigation";
-import { getUser } from "@/utils/supabase/server";
+import { protectRoute } from "@/utils/supabase/server";
 
 export default async function ProtectedPage() {
-  const user = await getUser();
+  const user = await protectRoute();
 
   if (!user) {
     return redirect("/");

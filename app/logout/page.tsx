@@ -5,7 +5,7 @@ import { signOutAction } from "@/app/actions";
 
 import React from "react";
 
-const page = () => {
+const Logout = () => {
   const handleSignOut = async () => {
     signOutAction();
   };
@@ -17,4 +17,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Logout;

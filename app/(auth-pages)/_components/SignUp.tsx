@@ -1,9 +1,9 @@
 "use client";
 
 import { loginWithOauthAction, signUpAction } from "@/app/actions";
-import { SubmitButton } from "@/components/submit-button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import { SubmitButton } from "@/components/SubmitButton";
+import { Input } from "@/components/ui/Input";
+import { Label } from "@/components/ui/Label";
 import { Provider } from "@supabase/supabase-js";
 import { useRouter } from "next/navigation";
 import { useTransition } from "react";

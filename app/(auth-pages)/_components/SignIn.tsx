@@ -1,10 +1,10 @@
 "use client";
 
 import { loginWithOauthAction, signInAction } from "@/app/actions";
-import { FormMessage, Message } from "@/components/form-message";
-import { SubmitButton } from "@/components/submit-button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import { FormMessage, Message } from "@/components/FormMessage";
+import { SubmitButton } from "@/components/SubmitButton";
+import { Input } from "@/components/ui/Input";
+import { Label } from "@/components/ui/Label";
 import { Provider } from "@supabase/auth-js";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
