@@ -35,6 +35,7 @@ export async function getAuth() {
 
 export async function getUser() {
   const { auth } = await createSupabaseClient();
+
   const user = (await auth.getUser()).data.user;
 
   return user;
