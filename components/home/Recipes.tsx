@@ -10,14 +10,12 @@ const Recipes = async () => {
   const recipes: RecipeResponse[] | null = data;
 
   return (
-    <div>
+    <div className="">
       <div>Recipes</div>
-      <div className="flex flex-1 gap-8">
+      <div className="flex flex-1 md:gap-8 gap-5">
         {recipes &&
           recipes.map((recipe) => (
-            <div key={recipe.id}>
-              <RecipeCard recipe={recipe} />
-            </div>
+            <RecipeCard key={recipe.id} recipe={recipe} />
           ))}
       </div>
     </div>
