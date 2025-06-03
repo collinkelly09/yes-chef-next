@@ -10,9 +10,9 @@ const Recipes = async () => {
   const recipes: RecipeResponse[] | null = data;
 
   return (
-    <div className="">
+    <div className="w-screen">
       <div>Recipes</div>
-      <div className="flex flex-1 md:gap-8 gap-5">
+      <div className="w-full h-full overflow-x-scroll whitespace-nowrap scroll-smooth">
         {recipes &&
           recipes.map((recipe) => (
             <RecipeCard key={recipe.id} recipe={recipe} />
