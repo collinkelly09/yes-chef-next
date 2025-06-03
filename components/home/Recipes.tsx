@@ -11,8 +11,8 @@ const Recipes = async () => {
 
   return (
     <div className="w-screen">
-      <div>Recipes</div>
-      <div className="w-full h-full overflow-x-scroll whitespace-nowrap scroll-smooth">
+      <div className="px-5 text-slate-500 text-lg">Recipes</div>
+      <div className="w-full overflow-x-scroll overflow-hidden no-scrollbar whitespace-nowrap scroll-smooth">
         {recipes &&
           recipes.map((recipe) => (
             <RecipeCard key={recipe.id} recipe={recipe} />
