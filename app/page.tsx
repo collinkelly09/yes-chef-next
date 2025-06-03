@@ -8,13 +8,6 @@ export default async function Home() {
   const user = await getUser();
   return (
     <>
-      <div className="flex ">
-        <div>
-          <MenuButton />
-          <div className="h-full"></div>
-        </div>
-        <Hero />
-      </div>
       {!user ? (
         <>
           <AuthPage />

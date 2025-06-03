@@ -2,6 +2,7 @@ import { ThemeProvider } from "next-themes";
 import { Italianno, Jacques_Francois } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 import "./globals.css";
+import Nav from "@/components/menu/Nav";
 
 export const italianno = Italianno({
   weight: "400",
@@ -46,7 +47,10 @@ export default async function RootLayout({
           disableTransitionOnChange
         >
           <main className="min-h-screen flex flex-col items-center">
-            <div className=" pt-5 md:pt-12 flex flex-col">{children}</div>
+            <div className="flex flex-col">
+              <Nav />
+              <div className=" pt-5 md:pt-12 flex flex-col">{children}</div>
+            </div>
             {/* <div>
               <footer className="w-full flex items-center justify-center border-t mx-auto text-center text-xs gap-8 py-16">
                 
