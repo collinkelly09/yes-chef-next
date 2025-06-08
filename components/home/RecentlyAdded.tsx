@@ -17,10 +17,10 @@ const RecentlyAdded = async () => {
 
   return (
     <>
-      <div className="w-[60%]">
+      <div className="md:w-[70%]">
         <div className="px-5 text-slate-500 text-lg">Recently Added</div>
-        <div className="flex items-center px-10">
-          <div className="w-full flex flex-wrap">
+        <div className="flex items-center md:px-10">
+          <div className="w-full flex md:flex-wrap">
             {mostRecent &&
               mostRecent.map((recipe) => (
                 <RecentlyAddedCard key={recipe.id} recipe={recipe} />

@@ -1,9 +1,6 @@
-import React from "react";
 import { createSupabaseClient } from "@/utils/supabase/server";
-import RecipeCard from "../recipes/RecipeCard";
 import { RecipeResponse } from "@/utils/types";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import { shuffle } from "@/utils/customFunctions";
+import RecipesSlider from "./RecipesSlider";
 
 const Recipes = async () => {
   const supabase = await createSupabaseClient();
@@ -14,16 +11,7 @@ const Recipes = async () => {
   return (
     <>
       <div className="px-5 text-slate-500 text-lg">Recipes</div>
-      <div className="flex items-center">
-        <ChevronLeft size={40} strokeWidth={1} />
-        <div className="w-full overflow-x-scroll overflow-hidden no-scrollbar whitespace-nowrap scroll-smooth">
-          {recipes &&
-            shuffle(recipes).map((recipe) => (
-              <RecipeCard key={recipe.id} recipe={recipe} />
-            ))}
-        </div>
-        <ChevronRight size={40} strokeWidth={1} />
-      </div>
+      {recipes && <RecipesSlider recipes={recipes} />}
     </>
   );
 };
