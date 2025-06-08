@@ -8,7 +8,7 @@ export default function Header() {
       >
         yesChef
       </div>
-      <div className="w-full p-[1px] bg-gradient-to-r from-transparent via-foreground/10 to-transparent my-5 md:my-8" />
+      <div className="w-full p-[1px] bg-gradient-to-r from-transparent via-foreground/10 to-transparent mt-5 md:my-8" />
     </div>
   );
 }

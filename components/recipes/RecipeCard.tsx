@@ -1,6 +1,6 @@
 "use client";
 
-import { starConversion } from "@/utils/conversions";
+import { starConversion } from "@/utils/customFunctions";
 import useWindowSize from "@/utils/hooks";
 import { RecipeResponse } from "@/utils/types";
 
