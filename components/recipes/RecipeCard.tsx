@@ -13,9 +13,11 @@ const RecipeCard = ({ key, recipe }: Props) => {
   const size = useWindowSize();
 
   return (
-    <div className="inline-block p-2 cursor-pointer hover:scale-105 ease-in-out duration-300">
+    <div
+      key={key}
+      className="inline-block p-2 cursor-pointer hover:scale-105 ease-in-out duration-300"
+    >
       <div
-        key={key}
         className="flex flex-col bg-slate-100 rounded-xl w-28 md:w-52"
         role="RecipeCard"
       >
