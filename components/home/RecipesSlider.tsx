@@ -1,11 +1,9 @@
 "use client";
 
-import { shuffle } from "@/utils/customFunctions";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import React from "react";
-import RecipeCard from "../recipes/RecipeCard";
-import { RecipeResponse } from "@/utils/types";
 import useWindowSize from "@/utils/hooks";
+import { RecipeResponse } from "@/utils/types";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import RecipeCard from "../recipes/RecipeCard";
 
 const RecipesSlider = ({ recipes }: { recipes: RecipeResponse[] }) => {
   const size = useWindowSize();
@@ -13,7 +11,7 @@ const RecipesSlider = ({ recipes }: { recipes: RecipeResponse[] }) => {
     <div className="flex items-center">
       {size.width! > 768 && <ChevronLeft size={40} strokeWidth={1} />}
       <div className="w-full overflow-x-scroll overflow-hidden no-scrollbar whitespace-nowrap scroll-smooth">
-        {shuffle(recipes).map((recipe) => (
+        {recipes.map((recipe) => (
           <RecipeCard key={recipe.id} recipe={recipe} />
         ))}
       </div>

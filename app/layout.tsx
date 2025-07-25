@@ -46,8 +46,8 @@ export default async function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <main className="min-h-screen flex flex-col items-center">
-            <div className="flex flex-col w-full">
+          <main className="flex flex-col items-center">
+            <div className="flex flex-col items-center w-full       ">
               <Nav />
               <div className="  md:pt-12 flex flex-col">{children}</div>
             </div>
