@@ -47,9 +47,11 @@ export default async function RootLayout({
           disableTransitionOnChange
         >
           <main className="flex flex-col items-center">
-            <div className="flex flex-col items-center w-full       ">
+            <div className="flex flex-col items-center w-full">
               <Nav />
-              <div className="  md:pt-12 flex flex-col">{children}</div>
+              <div className="md:mt-0 mt-32 md:pt-12 flex flex-col">
+                {children}
+              </div>
             </div>
             {/* <div>
               <footer className="w-full flex items-center justify-center border-t mx-auto text-center text-xs gap-8 py-16">
