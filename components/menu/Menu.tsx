@@ -7,7 +7,7 @@ const Menu = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
-    <div className="absolute left-0 top-0 bottom-0 flex items-start">
+    <div className="absolute left-0 top-0 bottom-0 flex items-start z-20">
       <MenuButton setIsOpen={setIsOpen} />
     </div>
   );

@@ -1,6 +1,7 @@
 import { createSupabaseClient } from "@/utils/supabase/server";
 import { RecipeResponse } from "@/utils/types";
 import RecipesSlider from "./RecipesSlider";
+import { shuffle } from "@/utils/customFunctions";
 
 const Recipes = async () => {
   const supabase = await createSupabaseClient();
@@ -11,7 +12,7 @@ const Recipes = async () => {
   return (
     <>
       <div className="px-5 text-slate-500 text-lg">Recipes</div>
-      {recipes && <RecipesSlider recipes={recipes} />}
+      {recipes && <RecipesSlider recipes={shuffle(recipes)} />}
     </>
   );
 };
